@@ -1,0 +1,2 @@
+defineNuxtRouteMiddleware((to, from) => {
+});
