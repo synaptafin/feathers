@@ -17,12 +17,6 @@ export default defineNuxtConfig({
     url,
   },
 
-  routeRules: {
-    '/api/search': {
-      prerender: true,
-    },
-  },
-
   runtimeConfig: {
     public: {
       baseUrl: url,
@@ -138,9 +132,9 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    prerender: {
-      routes: ['/api/__sitemap__/urls'],
-    },
+    // prerender: {
+    //   routes: ['/api/__sitemap__/urls'],
+    // },
     imports: {
       dirs: [
         fileURLToPath(new URL('./server/database/**', import.meta.url)),

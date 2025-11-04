@@ -63,7 +63,7 @@
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.7.1",
+    "@nuxt/eslint-config": "latest",
     "@playwright/test": "^1.45.1",
     "@stylistic/eslint-plugin": "^5.4.0",
     "@types/jsonwebtoken": "^9.0.10",

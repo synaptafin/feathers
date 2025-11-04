@@ -1,6 +1,3 @@
 <template>
-  <div>{{ res }}</div>
+  <div>Insight</div>
 </template>
-<script setup lang="ts">
-const { data: res } = useAsyncData(() => $fetch('/api/abc'));
-</script>

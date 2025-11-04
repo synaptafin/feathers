@@ -16,7 +16,6 @@ import type {
 } from '#ui/types';
 import type { GetItemKeys } from '#ui/types/utils';
 import type { ComponentConfig } from '#ui/types/tv';
-import { computed, ref, useTemplateRef } from 'vue';
 import {
   ListboxRoot,
   ListboxFilter,
@@ -360,6 +359,7 @@ function getGroupWithItems(
   group: G,
   items: (T & { matches?: FuseResultMatch[] })[],
 ) {
+  /* @vue-ignore */
   if (group?.postFilter && typeof group.postFilter === 'function') {
     items = group.postFilter(searchTerm.value, items);
   }
