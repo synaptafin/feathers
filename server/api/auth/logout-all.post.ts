@@ -1,5 +1,6 @@
 import { deleteCookie, createError } from 'h3';
 import { logoutAllDevices } from 'server/services/authService';
+import { isProd } from 'server/utils/constants';
 
 /**
  * Logout from all devices
@@ -28,14 +29,14 @@ export default defineEventHandler(async (event) => {
       path: '/',
       httpOnly: true,
       sameSite: 'lax',
-      secure: process.env.NODE_ENV === 'production',
+      secure: isProd,
     });
 
     deleteCookie(event, 'refresh_token', {
       path: '/',
       httpOnly: true,
       sameSite: 'lax',
-      secure: process.env.NODE_ENV === 'production',
+      secure: isProd
     });
 
     return {

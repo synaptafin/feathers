@@ -1,6 +1,5 @@
 import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
-import { sql, relations } from 'drizzle-orm';
-import { pgTable, uuid, varchar, timestamp, boolean, integer as pgInteger, text as pgText, pgEnum } from 'drizzle-orm/pg-core'
+import { sql } from 'drizzle-orm';
 
 
 export const scrapingData = sqliteTable('scraping_data', {

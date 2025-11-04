@@ -1,4 +1,5 @@
 import { authenticateWithGitHub } from 'server/services/githubAuthService';
+import { isProd } from 'server/utils/constants';
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
@@ -19,7 +20,7 @@ export default defineEventHandler(async (event) => {
     // Set cookies
     setCookie(event, 'auth_token', accessToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: isProd,
       sameSite: 'lax',
       maxAge: 60 * 15, // 15 minutes
       path: '/',
@@ -27,7 +28,7 @@ export default defineEventHandler(async (event) => {
 
     setCookie(event, 'refresh_token', refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: isProd,
       sameSite: 'lax',
       maxAge: 60 * 60 * 24 * 7, // 7 days
       path: '/',

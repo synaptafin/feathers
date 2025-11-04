@@ -17,14 +17,14 @@ export default defineEventHandler(async (event) => {
       path: '/',
       httpOnly: true,
       sameSite: 'lax',
-      secure: process.env.NODE_ENV === 'production',
+      secure: true
     });
 
     deleteCookie(event, 'refresh_token', {
       path: '/',
       httpOnly: true,
       sameSite: 'lax',
-      secure: process.env.NODE_ENV === 'production',
+      secure: true
     });
 
     // If user is authenticated, invalidate refresh token in database

@@ -2,7 +2,9 @@ import jwt from 'jsonwebtoken';
 import { createError } from 'h3';
 import type { StringValue } from 'ms';
 
-const JWT_SECRET = process.env.JWT_SECRET!;
+
+const config = useRuntimeConfig();
+const JWT_SECRET = config.jwtSecret;
 
 /**
  * Generate access token

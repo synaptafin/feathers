@@ -1,4 +1,5 @@
 import { defineEventHandler, readBody, setCookie } from 'h3';
+import { isProd } from 'server/utils/constants';
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -21,12 +22,12 @@ export default defineEventHandler(async (event) => {
     path: '/',
     maxAge: 60 * 60 * 24 * 7, // 7 days
     sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
+    secure: true
   });
 
   setCookie(event, 'refresh_token', refreshToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: isProd,
     sameSite: 'lax',
     maxAge: 60 * 60 * 24 * 7, // 7 days
     path: '/',

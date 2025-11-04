@@ -28,6 +28,9 @@ export default defineNuxtConfig({
     public: {
       baseUrl: url,
     },
+    neonPostgresqlDbHost: process.env.NEON_POSTGRESQL_DB_HOST,
+    sqliteDbPath: process.env.SQLITE_DB_PATH,
+    jwtSecret: process.env.JWT_SECRET,
     githubClientId: process.env.GITHUB_CLIENT_ID,
     githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
   },
