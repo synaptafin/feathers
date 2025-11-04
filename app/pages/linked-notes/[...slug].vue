@@ -60,39 +60,40 @@
 </template>
 
 <script setup lang="ts">
-import { useDark } from '@vueuse/core'
+import { useDark } from '@vueuse/core';
 
-const route = useRoute()
-const isDark = useDark()
+const route = useRoute();
+const isDark = useDark();
 
 // Compute breadcrumb segments from the route path
 const breadcrumbSegments = computed(() => {
   // Remove leading slash and split
-  const segments = route.path.replace(/^\//, '').split('/')
+  const segments = route.path.replace(/^\//, '').split('/');
   // Build up each path for NuxtLink
-  let path = ''
+  let path = '';
   return segments.map((seg, _) => {
-    path += '/' + seg
+    path += '/' + seg;
     return {
       name: seg,
       path: path,
-    }
-  })
-})
+    };
+  });
+});
 
 const { data: doc } = await useAsyncData(() =>
   queryCollection('docs').path(route.path).first(),
-)
+);
 
 if (!doc.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Document not found' })
+  throw createError({ statusCode: 404, statusMessage: 'Document not found' });
 }
 
+useSeoMeta(doc.value?.seo || {});
 useSeoMeta({
   title: doc.value?.title,
   description: doc.value?.description,
   ogType: 'article',
   twitterTitle: doc.value?.title,
   twitterCard: 'summary',
-})
+});
 </script>

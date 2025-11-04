@@ -27,7 +27,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.1(@babel/parser@7.28.4)(db0@0.3.4(@libsql/client@0.15.15)(better-sqlite3@12.4.1)(drizzle-orm@0.44.6(@libsql/client@0.15.15)(@neondatabase/serverless@1.0.2)(@opentelemetry/api@1.9.0)(@types/pg@8.15.5)(better-sqlite3@12.4.1)(pg@8.16.3)))(embla-carousel@8.6.0)(focus-trap@7.6.5)(ioredis@5.8.2)(magicast@0.3.5)(typescript@5.9.3)(vite@7.1.11(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.70.0)(terser@5.44.0)(yaml@2.8.1))(vue-router@4.6.3(vue@3.5.22(typescript@5.9.3)))(vue@3.5.22(typescript@5.9.3))(zod@4.1.12)
       '@nuxtjs/robots':
-        specifier: ^5.2.8
+        specifier: ^5.5.6
         version: 5.5.6(h3@1.15.4)(magicast@0.3.5)(vue@3.5.22(typescript@5.9.3))
       '@nuxtjs/sitemap':
         specifier: ^7.2.2

@@ -1,0 +1,38 @@
+# robots.txt for feathers blog
+# https://dopamine.github.io/feathers
+
+# Allow all crawlers to access the site
+User-agent: *
+Allow: /
+
+# Block access to admin, authentication, and API routes
+Disallow: /auth/
+Disallow: /.well-known/
+
+# Block access to search parameter pages (avoid duplicate content)
+Disallow: /*?*
+
+# Sitemap location
+Sitemap: https://dopamine.github.io/feathers/sitemap.xml
+
+# Crawl delay (optional, be nice to servers)
+# Crawl-delay: 1
+
+# Specific bot rules (optional examples)
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

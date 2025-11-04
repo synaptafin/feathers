@@ -3,7 +3,6 @@ import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 
 const url = process.env.BASE_URL || 'http://localhost:3000';
-const indexable = process.env.SITE_INDEXABLE || false;
 
 export default defineNuxtConfig({
 
@@ -14,7 +13,7 @@ export default defineNuxtConfig({
   css: ['~/assets/main.css'],
 
   site: {
-    indexable,
+    indexable: true,
     url,
   },
 
@@ -53,15 +52,16 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/content',
     '@nuxt/image',
     '@stefanobartoletti/nuxt-social-share',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
+    '@nuxt/content',  // must be after @nuxtjs/sitemap
     'nuxt-schema-org',
     '@nuxt/icon',
     '@nuxt/ui',
     'nuxt-auth-utils',
+    '@nuxtjs/robots',
   ],
 
   devServer: {
@@ -139,7 +139,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/rss.xml', '/api/__sitemap__/urls'],
+      routes: ['/api/__sitemap__/urls'],
     },
     imports: {
       dirs: [

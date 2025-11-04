@@ -2,7 +2,7 @@
 const items = [
   { icon: 'streamline-sharp:sword-attack-solid', text: 'Home' },
   { icon: 'streamline-sharp:sword-attack-solid', text: 'Insight', link: '/insight' },
-  { icon: 'streamline-sharp:sword-attack-solid', text: 'Attack', link: '/attack' },
+  { icon: 'streamline-sharp:sword-attack-solid', text: 'Empty', link: '/empty' },
   { icon: 'hugeicons:constellation', text: 'Linked Notes', link: '/linked-notes' },
   { icon: 'streamline-sharp:sword-attack-solid', text: 'Inspiration', link: '/inspiration' },
   { icon: 'streamline-sharp:sword-attack-solid', text: 'Graph', link: '/graph' },
