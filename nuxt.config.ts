@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 
-const url = process.env.BASE_URL || 'http://localhost:3000';
+const url = process.env.BASE_URL;
 
 export default defineNuxtConfig({
 
