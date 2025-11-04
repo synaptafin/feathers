@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEON_POSTRESQL_DB_HOST: ${{ secrets.NEON_POSTGRESQL_DB_HOST }}
+      NEON_POSTGRESQL_DB_HOST: ${{ secrets.NEON_POSTGRESQL_DB_HOST }}
       JWT_SECRET: ${{ secrets.JWT_SECRET }}
       SQLITE_DB_PATH: ${{ secrets.SQLITE_DB_PATH }}
       OAUTH_GITHUB_CLIENT_ID: ${{ secrets.OAUTH_GITHUB_CLIENT_ID }}
