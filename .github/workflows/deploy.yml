@@ -18,6 +18,7 @@ jobs:
       OAUTH_GITHUB_CLIENT_SECRET: ${{ secrets.OAUTH_GITHUB_CLIENT_SECRET }}
     steps:
       - run: |
+          echo ${NUXT_APP_BASE_URL} 
           echo ${NEON_POSTGRESQL_DB_HOST}
           echo ${JWT_SECRET}
           echo ${SQLITE_DB_PATH}
