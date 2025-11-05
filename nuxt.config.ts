@@ -10,6 +10,11 @@ export default defineNuxtConfig({
     server: fileURLToPath(new URL('./server', import.meta.url)),
   },
 
+  routeRules: {
+    '/': { prerender: true },
+    '/linked-nodes/**': { prerender: true },
+  },
+
   css: ['~/assets/main.css'],
 
   site: {
