@@ -3,17 +3,17 @@ import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 
 const url = process.env.BASE_URL;
+const appUrl = process.env.NUXT_APP_APP_URL!;
 
 export default defineNuxtConfig({
-
   alias: {
     server: fileURLToPath(new URL('./server', import.meta.url)),
   },
 
   routeRules: {
-    '/': { prerender: true },
-    '/linked-notes/**': { prerender: true },
-    '/linked-notes/sorted/dotnet/unity/unity-shader': { prerender:true } 
+    [appUrl]: { prerender: true },
+    [appUrl + 'linked-notes/**']: { prerender: true },
+    [appUrl + '/linked-notes/sorted/dotnet/unity/unity-shader']: { prerender:true } 
   },
 
   css: ['~/assets/main.css'],
