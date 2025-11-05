@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 
 const url = process.env.BASE_URL;
-const appUrl = process.env.NUXT_APP_APP_URL!;
+const appUrl = process.env.NUXT_APP_BASE_URL!;
 
 export default defineNuxtConfig({
   alias: {
