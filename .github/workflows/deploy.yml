@@ -24,7 +24,10 @@ jobs:
           echo ${SQLITE_DB_PATH}
           echo ${OAUTH_GITHUB_CLIENT_ID}
           echo ${OAUTH_GITHUB_CLIENT_SECRET}
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+        with:
+          submodules: true
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:

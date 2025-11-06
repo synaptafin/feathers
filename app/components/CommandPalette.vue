@@ -77,20 +77,20 @@ interface CommandPaletteItem
   ui?: Pick<
     CommandPalette['slots'],
     | 'item'
-    | 'itemLeadingIcon'
-    | 'itemLeadingAvatarSize'
-    | 'itemLeadingAvatar'
-    | 'itemLeadingChipSize'
-    | 'itemLeadingChip'
-    | 'itemLabel'
-    | 'itemLabelPrefix'
-    | 'itemLabelBase'
-    | 'itemLabelSuffix'
-    | 'itemTrailing'
-    | 'itemTrailingKbds'
-    | 'itemTrailingKbdsSize'
-    | 'itemTrailingHighlightedIcon'
-    | 'itemTrailingIcon'
+      | 'itemLeadingIcon'
+      | 'itemLeadingAvatarSize'
+      | 'itemLeadingAvatar'
+      | 'itemLeadingChipSize'
+      | 'itemLeadingChip'
+      | 'itemLabel'
+      | 'itemLabelPrefix'
+      | 'itemLabelBase'
+      | 'itemLabelSuffix'
+      | 'itemTrailing'
+      | 'itemTrailingKbds'
+      | 'itemTrailingKbdsSize'
+      | 'itemTrailingHighlightedIcon'
+      | 'itemTrailingIcon'
   >;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
@@ -122,75 +122,75 @@ interface CommandPaletteProps<
   G extends CommandPaletteGroup<T> = CommandPaletteGroup<any>,
   T extends CommandPaletteItem = CommandPaletteItem,
 > extends Pick<
-      ListboxRootProps,
-      | 'multiple'
-      | 'disabled'
-      | 'modelValue'
-      | 'defaultValue'
-      | 'highlightOnHover'
-      | 'selectionBehavior'
-    >,
-    Pick<UseComponentIconsProps, 'loading' | 'loadingIcon'> {
-  /**
-   * The element or component this component should render as.
-   * @defaultValue 'div'
-   */
-  as?: any;
-  /**
-   * The icon displayed in the input.
-   * @defaultValue appConfig.ui.icons.search
-   * @IconifyIcon
-   */
-  icon?: IconProps['name'];
-  /**
-   * The icon displayed when an item is selected.
-   * @defaultValue appConfig.ui.icons.check
-   * @IconifyIcon
-   */
-  selectedIcon?: IconProps['name'];
-  /**
-   * The icon displayed when an item has children.
-   * @defaultValue appConfig.ui.icons.chevronRight
-   * @IconifyIcon
-   */
-  trailingIcon?: IconProps['name'];
-  /**
-   * The placeholder text for the input.
-   * @defaultValue t('commandPalette.placeholder')
-   */
-  placeholder?: InputProps['placeholder'];
-  /**
-   * Automatically focus the input when component is mounted.
-   * @defaultValue true
-   */
-  autofocus?: boolean;
-  /**
-   * Display a close button in the input (useful when inside a Modal for example).
-   * `{ size: 'md', color: 'neutral', variant: 'ghost' }`{lang="ts-type"}
-   * @emits 'update:open'
-   * @defaultValue false
-   */
-  close?: boolean | Partial<ButtonProps>;
-  /**
-   * The icon displayed in the close button.
-   * @defaultValue appConfig.ui.icons.close
-   * @IconifyIcon
-   */
-  closeIcon?: IconProps['name'];
-  /**
-   * Display a button to navigate back in history.
-   * `{ size: 'md', color: 'neutral', variant: 'link' }`{lang="ts-type"}
-   * @defaultValue true
-   */
-  back?: boolean | ButtonProps;
-  /**
-   * The icon displayed in the back button.
-   * @defaultValue appConfig.ui.icons.arrowLeft
-   * @IconifyIcon
-   */
-  backIcon?: IconProps['name'];
-  groups?: G[];
-  /**
+            ListboxRootProps,
+            | 'multiple'
+              | 'disabled'
+              | 'modelValue'
+              | 'defaultValue'
+              | 'highlightOnHover'
+              | 'selectionBehavior'
+          >,
+          Pick<UseComponentIconsProps, 'loading' | 'loadingIcon'> {
+            /**
+             * The element or component this component should render as.
+             * @defaultValue 'div'
+             */
+            as?: any;
+            /**
+             * The icon displayed in the input.
+             * @defaultValue appConfig.ui.icons.search
+             * @IconifyIcon
+             */
+            icon?: IconProps['name'];
+            /**
+             * The icon displayed when an item is selected.
+             * @defaultValue appConfig.ui.icons.check
+             * @IconifyIcon
+             */
+            selectedIcon?: IconProps['name'];
+            /**
+             * The icon displayed when an item has children.
+             * @defaultValue appConfig.ui.icons.chevronRight
+             * @IconifyIcon
+             */
+            trailingIcon?: IconProps['name'];
+            /**
+             * The placeholder text for the input.
+             * @defaultValue t('commandPalette.placeholder')
+             */
+            placeholder?: InputProps['placeholder'];
+            /**
+             * Automatically focus the input when component is mounted.
+             * @defaultValue true
+             */
+            autofocus?: boolean;
+            /**
+             * Display a close button in the input (useful when inside a Modal for example).
+             * `{ size: 'md', color: 'neutral', variant: 'ghost' }`{lang="ts-type"}
+             * @emits 'update:open'
+             * @defaultValue false
+             */
+            close?: boolean | Partial<ButtonProps>;
+            /**
+             * The icon displayed in the close button.
+             * @defaultValue appConfig.ui.icons.close
+             * @IconifyIcon
+             */
+            closeIcon?: IconProps['name'];
+            /**
+             * Display a button to navigate back in history.
+             * `{ size: 'md', color: 'neutral', variant: 'link' }`{lang="ts-type"}
+             * @defaultValue true
+             */
+            back?: boolean | ButtonProps;
+            /**
+             * The icon displayed in the back button.
+             * @defaultValue appConfig.ui.icons.arrowLeft
+             * @IconifyIcon
+             */
+            backIcon?: IconProps['name'];
+            groups?: G[];
+            /**
 * Options for [useFuse](https://vueuse.org/integrations/useFuse).
 * @defaultValue {
 fuseOptions: {
@@ -202,15 +202,15 @@ resultLimit: 12,
 matchAllWhenSearchEmpty: true
 }
 */
-  fuse?: UseFuseOptions<T>;
-  /**
-   * The key used to get the label from the item.
-   * @defaultValue 'label'
-   */
-  labelKey?: GetItemKeys<T>;
-  class?: any;
-  ui?: CommandPalette['slots'];
-}
+            fuse?: UseFuseOptions<T>;
+            /**
+             * The key used to get the label from the item.
+             * @defaultValue 'label'
+             */
+            labelKey?: GetItemKeys<T>;
+            class?: any;
+            ui?: CommandPalette['slots'];
+          }
 </script>
 
 <!-- eslint-disable @typescript-eslint/no-explicit-any -->
@@ -402,7 +402,8 @@ const filteredGroups = computed(() => {
       }
 
       return getGroupWithItems(group, items);
-  }).filter((group) => !!group);
+    })
+    .filter((group) => !!group);
 
   const nonFuseGroups =
     groups.value

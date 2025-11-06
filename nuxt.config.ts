@@ -11,9 +11,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/feathers/': { prerender: true },
-    '/feathers/linked-notes/**': { prerender: true },
-    '/feathers/linked-notes/sorted/dotnet/unity/unity-shader': { prerender:true } 
+    '/': { prerender: true },
+    '/linked-notes/**': { prerender: true },
+    // '/linked-notes/sorted/dotnet/unity/unity-shader': { prerender:true } 
   },
 
   css: ['~/assets/main.css'],
