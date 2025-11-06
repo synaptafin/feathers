@@ -67,11 +67,9 @@ const isDark = useDark();
 
 // Compute breadcrumb segments from the route path
 const breadcrumbSegments = computed(() => {
-  // Remove leading slash and split
   const segments = route.path.replace(/^\//, '').split('/');
-  // Build up each path for NuxtLink
   let path = '';
-  return segments.map((seg, _) => {
+  return segments.map((seg) => {
     path += '/' + seg;
     return {
       name: seg,
@@ -80,9 +78,23 @@ const breadcrumbSegments = computed(() => {
   });
 });
 
-const { data: doc } = await useAsyncData(() =>
-  queryCollection('docs').path(route.path).first(),
+// ✨ Use a computed key based on the route path
+const { data: doc } = await useAsyncData(
+  `doc-${route.path}`, // 👈 Add dynamic key
+  () => queryCollection('docs').path(route.path).first(),
+  {
+    watch: [() => route.path], // 👈 Watch route changes
+  }
 );
+
+// // ✨ Or alternatively, manually refresh on route change
+// watch(() => route.path, async () => {
+//   const { data: newDoc } = await useAsyncData(
+//     `doc-${route.path}`,
+//     () => queryCollection('docs').path(route.path).first()
+//   );
+//   doc.value = newDoc.value;
+// });
 
 if (!doc.value) {
   throw createError({ statusCode: 404, statusMessage: 'Document not found' });

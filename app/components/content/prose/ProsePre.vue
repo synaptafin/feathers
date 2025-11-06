@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useClipboard } from '@vueuse/core'
+import { useClipboard } from '@vueuse/core';
 const { copy, copied, isSupported } = useClipboard({
   source: '',
   copiedDuring: 1000,
-})
+});
 defineProps({
   code: {
     type: String,
@@ -29,11 +29,13 @@ defineProps({
     type: String,
     default: null,
   },
-})
+});
 </script>
 <template>
   <div class="relative rounded-lg">
-    <pre :class="$props.class"><slot /></pre>
+    <pre :class="$props.class">
+      <slot />
+    </pre>
     <div class="absolute top-2 right-2 flex items-center space-x-2">
       <Icon
         v-if="isSupported && !copied"

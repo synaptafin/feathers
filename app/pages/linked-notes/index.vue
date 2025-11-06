@@ -234,13 +234,13 @@ const onInvisible = (index: number) => {
   transition: box-shadow 0.3s;
 }
 
-.dark .glass-card {
+.glass-card {
   background: rgba(36, 37, 42, 0.28);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Modern Link Styles */
-.fancy-link {
+.light .fancy-link {
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
@@ -256,6 +256,33 @@ const onInvisible = (index: number) => {
   backdrop-filter: blur(2px);
 }
 
+.fancy-link {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #a5b4fc; /* Soft indigo */
+  text-shadow: 
+    0 0 12px rgba(165, 180, 252, 0.4),
+    0 0 24px rgba(129, 140, 248, 0.2);
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.2s ease,
+    background 0.3s ease;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 45, 0.6),
+    rgba(45, 45, 60, 0.4)
+  );
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(165, 180, 252, 0.15);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
 .fancy-link:hover {
   color: #38bdf8;
   text-shadow: 0 0 18px #38bdf8;
@@ -263,12 +290,12 @@ const onInvisible = (index: number) => {
   background: rgba(255, 255, 255, 0.18);
 }
 
-.dark .fancy-link {
+.fancy-link {
   color: #a5b4fc;
   background: rgba(36, 37, 42, 0.18);
 }
 
-.dark .fancy-link:hover {
+.fancy-link:hover {
   color: #818cf8;
   text-shadow: 0 0 18px #818cf8;
 }
@@ -286,7 +313,7 @@ const onInvisible = (index: number) => {
   box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.12);
 }
 
-.dark .glass-overlay {
+.glass-overlay {
   background: rgba(36, 37, 42, 0.18);
 }
 
