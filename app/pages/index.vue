@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const items = [
-  { icon: 'streamline-sharp:sword-attack-solid', text: 'Home' },
-  { icon: 'streamline-sharp:sword-attack-solid', text: 'Insight', link: '/insight' },
-  { icon: 'streamline-sharp:sword-attack-solid', text: 'Empty', link: '/empty' },
-  { icon: 'hugeicons:constellation', text: 'Linked Notes', link: '/linked-notes' },
-  { icon: 'streamline-sharp:sword-attack-solid', text: 'Inspiration', link: '/inspiration' },
-  { icon: 'streamline-sharp:sword-attack-solid', text: 'Graph', link: '/graph' },
+  { icon: 'mingcute:empty-box-line', text: 'Home' },
+  { icon: 'mingcute:tool-line', text: 'Insight', link: '/insight' },
+  { icon: 'mingcute:empty-box-line', text: 'Void', link: '/empty' },
+  { icon: 'hugeicons:constellation', text: 'Personal Wiki', link: '/linked-notes' },
+  { icon: 'mingcute:tool-line', text: 'Inspiration', link: '/inspiration' },
+  { icon: 'mingcute:tool-line', text: 'Graph', link: '/graph' },
   { icon: 'streamline-sharp:browser-error-404-remix', text: 'Error', link: '/error' },
 ];
 </script>

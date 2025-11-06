@@ -1,6 +1,3 @@
-[submodule "content"]
-	path = content
-	url = https://github.com/bloggrify/blog-content.git
 [submodule "content/linked-notes"]
 	path = content/linked-notes
 	url = git@github.com:synaptafin/linked-notes.git
